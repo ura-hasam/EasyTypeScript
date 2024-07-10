@@ -1,3 +1,5 @@
 "use strict";
-const x1 = 10000000;
-console.log(x1);
+const x = 13 << 1;
+console.log(x); //26
+const y = 13 >> 1;
+console.log(y); //6
