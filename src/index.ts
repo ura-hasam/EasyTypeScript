@@ -1,4 +1,8 @@
-const x=13<<1;
-console.log(x);//26
-const y=13>>1;
-console.log(y);//6
+const x=3;
+console.log(`xが${x}のとき`);
+console.log(`x===3 は ${x===3}`);
+console.log(`x!==3 は ${x!==3}`);
+console.log(`x<3 は ${x<3}`);
+console.log(`x>3 は ${x>3}`);
+console.log(`x<=3 は ${x<=3}`);
+console.log(`x>=3 は ${x>=3}`);
