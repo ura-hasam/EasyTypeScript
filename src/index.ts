@@ -1,8 +1,6 @@
-const x=3;
-console.log(`xが${x}のとき`);
-console.log(`x===3 は ${x===3}`);
-console.log(`x!==3 は ${x!==3}`);
-console.log(`x<3 は ${x<3}`);
-console.log(`x>3 は ${x>3}`);
-console.log(`x<=3 は ${x<=3}`);
-console.log(`x>=3 は ${x>=3}`);
+const x=10;
+const y=2;
+console.log(x+y);
+console.log(x-y);
+console.log(x*y);
+console.log(x/y);
