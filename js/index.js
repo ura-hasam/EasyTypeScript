@@ -1,7 +1,11 @@
 "use strict";
-const num1 = 5;
-const num2 = 10;
-if (num1 < num2) {
-    console.log("num1はnum2より小さいです");
+const x = -10;
+if (x > 0) {
+    console.log("xは正の値です");
 }
-console.log("条件判断が終了しました。");
+else if (x < 0) {
+    console.log("xは負の値です");
+}
+else {
+    console.log("xは0です");
+}

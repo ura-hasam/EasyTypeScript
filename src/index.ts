@@ -1,7 +1,9 @@
-const num1:number=5;
-const num2:number=10;
+const x=-10;
 
-if(num1<num2){
-    console.log("num1はnum2より小さいです");
+if (x>0){
+    console.log("xは正の値です");
+}else if(x<0){
+    console.log("xは負の値です");
+}else{
+    console.log("xは0です");
 }
-console.log("条件判断が終了しました。")
