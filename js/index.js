@@ -1,19 +1,7 @@
 "use strict";
-let x = 10;
-let y = 2;
-x += 1;
-y -= 2;
-console.log(x);
-console.log(y);
-let age1 = 25;
-let age2 = 30;
-console.log(age1 < age2);
-console.log(age1 > age2);
-console.log(age1 <= age2);
-console.log(age1 >= age2);
-console.log(age1 === age2);
-console.log(age1 !== age2);
-const msg1 = "Hello";
-const msg2 = "World";
-const greeting = msg1 + " " + msg2;
-console.log(greeting);
+const num1 = 5;
+const num2 = 10;
+if (num1 < num2) {
+    console.log("num1はnum2より小さいです");
+}
+console.log("条件判断が終了しました。");
