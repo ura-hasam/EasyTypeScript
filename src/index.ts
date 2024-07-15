@@ -1,9 +1,14 @@
-const x=-10;
+const x=5;
+let msg:string="";
 
-if (x>0){
-    console.log("xは正の値です");
-}else if(x<0){
-    console.log("xは負の値です");
-}else{
-    console.log("xは0です");
+if (x>10){
+    msg="xは10より大きい";
 }
+else{
+    msg="xは10以下です";
+}
+console.log(msg);
+
+//三項演算子の例
+msg = x>10 ? "xは10より大きい" : "xは10以下です";
+console.log(msg);
