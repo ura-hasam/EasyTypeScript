@@ -1,9 +1,9 @@
 "use strict";
-function getTriArea() {
+function getTriArea(base, height) {
     let area = 0;
-    let base = 4;
-    let height = 3;
     area = base * height / 2;
     console.log(`面積は${area}です`);
 }
-getTriArea();
+let teihen = 4;
+let takasa = 3;
+getTriArea(teihen, takasa);
