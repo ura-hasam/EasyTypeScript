@@ -1,10 +1,5 @@
-function getTriArea(base:number,height:number)
-:void{
-    let area:number=0;
-
-    area=base*height/2;
-    console.log(`面積は${area}です`);
+function greet(name:string,greeting:string="Hello"):void{
+    console.log(`${greeting},${name}!`);
 }
-let teihen :number=4;
-let takasa:number=3;
-getTriArea(teihen,takasa);
+greet("HIRO");
+greet("HIRO","こんにちは");
