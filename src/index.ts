@@ -1,12 +1,22 @@
-function getFirstElement<T>(arr:T[]):T{
-    return arr[0];
+if (true){
+    let sum:number=0;
+    sum=3+5;
+    console.log(sum);
 }
-//number型の配列
-const numbers:number[]=[1,2,3,4,5];
-const firstNumber=getFirstElement(numbers);
-console.log(firstNumber);
+console.log(sum);
 
-// string型の配列
-const strings:string[]=["りんご","みかん","バナナ"];
-const firstString=getFirstElement(strings);
-console.log(firstString);
+for(let i=0;i<10;i++){
+    let sum:number=0;
+    sum=i+10;
+    console.log(`S{i}:${sum}`);
+}
+console.log(sum);
+console.log(i);
+
+function sampleFunction():void{
+    const x=1;
+    console.log(x);
+}
+sampleFunction();
+console.log(x);
+defined
