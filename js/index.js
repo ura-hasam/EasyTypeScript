@@ -1,10 +1,8 @@
 "use strict";
-function sum(...nums) {
-    let total = 0;
-    for (let num of nums) {
-        total += num;
-    }
-    console.log(`合計は${total}です`);
+function getTriArea(base, height) {
+    let area = 0;
+    area = base * height / 2;
+    return area;
 }
-sum(1, 2, 3, 4);
-sum(5, 10);
+let menseki = getTriArea(4, 3);
+console.log(`面積は${menseki}です`);
