@@ -1,8 +1,19 @@
-function getTriArea(base:number,height:number)
-:number{
-    let area:number=0;
-    area=base*height/2;
-    return area;
+function applyOperation(n:number,action:Function):void{
+    console.log(action(n));
 }
-let menseki=getTriArea(4,3);
-console.log(`面積は${menseki}です`);
+
+// const increment=function(n:number){
+//     return n+1;;
+// };
+const increment=(n:number):number=>{
+    return n+1;
+};
+// const decrement=function(n:number){
+//     return n-1;
+// };
+const decrement=(n:number):number=>{
+    return n-1;
+}
+
+applyOperation(5,increment);
+applyOperation(5,decrement);

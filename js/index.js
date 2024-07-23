@@ -1,8 +1,18 @@
 "use strict";
-function getTriArea(base, height) {
-    let area = 0;
-    area = base * height / 2;
-    return area;
+function applyOperation(n, action) {
+    console.log(action(n));
 }
-let menseki = getTriArea(4, 3);
-console.log(`面積は${menseki}です`);
+// const increment=function(n:number){
+//     return n+1;;
+// };
+const increment = (n) => {
+    return n + 1;
+};
+// const decrement=function(n:number){
+//     return n-1;
+// };
+const decrement = (n) => {
+    return n - 1;
+};
+applyOperation(5, increment);
+applyOperation(5, decrement);
