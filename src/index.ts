@@ -1,19 +1,12 @@
-function applyOperation(n:number,action:Function):void{
-    console.log(action(n));
+function getFirstElement<T>(arr:T[]):T{
+    return arr[0];
 }
+//number型の配列
+const numbers:number[]=[1,2,3,4,5];
+const firstNumber=getFirstElement(numbers);
+console.log(firstNumber);
 
-// const increment=function(n:number){
-//     return n+1;;
-// };
-const increment=(n:number):number=>{
-    return n+1;
-};
-// const decrement=function(n:number){
-//     return n-1;
-// };
-const decrement=(n:number):number=>{
-    return n-1;
-}
-
-applyOperation(5,increment);
-applyOperation(5,decrement);
+// string型の配列
+const strings:string[]=["りんご","みかん","バナナ"];
+const firstString=getFirstElement(strings);
+console.log(firstString);

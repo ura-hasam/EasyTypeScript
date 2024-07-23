@@ -1,18 +1,12 @@
 "use strict";
-function applyOperation(n, action) {
-    console.log(action(n));
+function getFirstElement(arr) {
+    return arr[0];
 }
-// const increment=function(n:number){
-//     return n+1;;
-// };
-const increment = (n) => {
-    return n + 1;
-};
-// const decrement=function(n:number){
-//     return n-1;
-// };
-const decrement = (n) => {
-    return n - 1;
-};
-applyOperation(5, increment);
-applyOperation(5, decrement);
+//number型の配列
+const numbers = [1, 2, 3, 4, 5];
+const firstNumber = getFirstElement(numbers);
+console.log(firstNumber);
+// string型の配列
+const strings = ["りんご", "みかん", "バナナ"];
+const firstString = getFirstElement(strings);
+console.log(firstString);
