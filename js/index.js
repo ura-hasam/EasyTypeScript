@@ -1,12 +1,17 @@
 "use strict";
-function getFirstElement(arr) {
-    return arr[0];
+function sampleFunction3() {
+    const x = 1;
+    if (x == 1) {
+        const y = 2;
+        console.log(y);
+        console.log(`if文内${globalVariable}`);
+    }
+    for (let i = 0; i < 1; i++) {
+        const z = 3;
+        console.log(`for文内:${globalVariable}`);
+    }
+    console.log(`関数内:${globalVariable}`);
 }
-//number型の配列
-const numbers = [1, 2, 3, 4, 5];
-const firstNumber = getFirstElement(numbers);
-console.log(firstNumber);
-// string型の配列
-const strings = ["りんご", "みかん", "バナナ"];
-const firstString = getFirstElement(strings);
-console.log(firstString);
+const globalVariable = 10;
+console.log(`グローバルスコープ:${globalVariable}`);
+sampleFunction3();

@@ -1,22 +1,20 @@
-if (true){
-    let sum:number=0;
-    sum=3+5;
-    console.log(sum);
-}
-console.log(sum);
-
-for(let i=0;i<10;i++){
-    let sum:number=0;
-    sum=i+10;
-    console.log(`S{i}:${sum}`);
-}
-console.log(sum);
-console.log(i);
-
-function sampleFunction():void{
+function sampleFunction3():void{
     const x=1;
-    console.log(x);
+
+    if(x==1){
+        const y=2;
+        console.log(y);
+        console.log(`if文内${globalVariable}`);
+    }
+
+    for(let i=0;i<1;i++){
+        const z=3;
+        console.log(`for文内:${globalVariable}`);
+    }
+    console.log(`関数内:${globalVariable}`)
 }
-sampleFunction();
-console.log(x);
-defined
+
+const globalVariable:number=10;
+console.log(`グローバルスコープ:${globalVariable}`);
+
+sampleFunction3();
