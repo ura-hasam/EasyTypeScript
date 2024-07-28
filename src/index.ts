@@ -1,32 +1,24 @@
-console.log("問題7-1")
-    function printNumber():void{
-        for(let i=0;i<6;i++){
-            console.log(i);
+class House{
+    //プロパティの定義
+    private _rooms:number=0;
+    //セッターの定義
+    set rooms(count:number){
+        if(count<0){
+            this._rooms=0;
+        }else{
+            this._rooms=count;
         }
     }
-console.log("===============")
-console.log("問題7-2")
-    function doubleNumber(baseNumber:number):number{
-        return baseNumber*2;
+    //ゲッターの定義
+    get rooms():number{
+        return this._rooms;
     }
-    console.log(doubleNumber(3));
-    console.log(doubleNumber(5));
-    console.log(doubleNumber(10));
-console.log("===============")
-console.log("問題7-3")
-    const sumN= function (n:number){
-        let sum=0;
-        for (let i=1;i<=n;i++){
-            sum+=i;
-        }
-        return sum;
-    }
-    const result=sumN(10);
-    console.log(result);
-console.log("===============")
-console.log("問題7-4")
-    const greeting=(name:string):void=>{
-        console.log(`Hello,${name}!`);
-    }
-    greeting("yamane");
-console.log("===============")
+    //メソッドの定義
+}
+const redHouse= new House();
+
+redHouse.rooms=-3;
+console.log(redHouse.rooms);
+
+const blueHouse= new House();
+const greenHouse= new House();
