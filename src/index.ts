@@ -14,6 +14,13 @@ class House{
         return this._rooms;
     }
     //メソッドの定義
+    activateSecurity(isOn:boolean){
+        if(isOn){
+            console.log("セキュリティを作動しました");
+        }else{
+            console.log("セキュリティを停止しました。");
+        }
+    }
 }
 const redHouse= new House();
 
@@ -22,3 +29,5 @@ console.log(redHouse.rooms);
 
 const blueHouse= new House();
 const greenHouse= new House();
+redHouse.activateSecurity(true);
+redHouse.activateSecurity(false);
