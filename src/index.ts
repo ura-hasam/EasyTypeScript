@@ -1,32 +1,34 @@
 class House{
     color:string;//家の色
-    private _rooms:number;
+    private rooms:number;
+    protected address:string;//同じクラス、継承クラスからのみアクセス可能
 
-    constructor(){
+    constructor(color:string,rooms:number,address:string){
         this.color="白";
-        this._rooms=1;
+        this.rooms=1;
+        this.address=address;
     }
-    //Getter宣言
-    get rooms(): number{
-        return this._rooms;
+    
+    public displayColor():void{
+        console.log(`この家の色は${this.color}です。`);
     }
-    //Setter宣言
-    set rooms(count:number){
-        if (count<0){
-            this._rooms=0;
-        }else{
-            this._rooms=count;
-        }
+
+    private countRooms():number{
+        return this.rooms;
     }
-    activateSecurity(isOn:boolean){
-        if(isOn){
-            console.log("セキュリティを作動しました");
-        }else{
-            console.log("セキュリティを停止しました");
-        }
+
+    protected getAddress():string{
+        return this.address;
     }
 }
-//定義したHouseクラスをここに記述する
-const redHouse=new House();//Houseのインスタンス化
-console.log(redHouse.color);//白
-console.log(redHouse.rooms);//1
+
+const redHouse=new House("白",1,"東京都");//Houseのインスタンス化
+
+redHouse.color="赤";
+redHouse.displayColor();
+
+//以下はアクセス不可
+// redHouse.rooms=2;
+// redHouse.countRooms();
+// redHouse.address="千葉県"
+// redHouse.getAddress();
