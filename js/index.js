@@ -1,23 +1,25 @@
 "use strict";
 class House {
-    constructor(color, rooms, address) {
+    // openDoor(isOn:boolean){
+    //     if(isOn){
+    //         console.log("ドアを開けました");
+    //     }
+    // }//メソッドの定義
+    openDoor() {
+        console.log("ドアを開けました");
+    }
+    set color(variation) {
+        this.color = variation;
+    } //setterの定義
+    get color() {
+        return this.color;
+    } //getterの定義
+    constructor() {
+        this.adress = "東京"; //住所
         this.color = "白";
         this.rooms = 1;
-        this.address = address;
-    }
-    displayColor() {
-        console.log(`この家の色は${this.color}です。`);
-    }
-    countRooms() {
-        return this.rooms;
-    }
-    getAddress() {
-        return this.address;
     }
 }
-const redHouse = new House("白", 1, "東京都"); //Houseのインスタンス化
-redHouse.color = "赤";
-redHouse.displayColor();
 //以下はアクセス不可
 // redHouse.rooms=2;
 // redHouse.countRooms();
