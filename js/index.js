@@ -1,20 +1,26 @@
 "use strict";
 class House {
-    activateSecurity(isOn, hasGarage) {
-        if (isOn) {
-            console.log("セキュリティを作動しました。");
-            if (hasGarage) {
-                console.log("ガレージのセキュリティも作動します");
-            }
-        }
-        else {
-            console.log("セキュリティを停止しました");
-            if (hasGarage) {
-                console.log("ガレージのセキュリティも停止します");
-            }
+    constructor(rooms) {
+        this.rooms = rooms;
+    }
+    getRooms() {
+        return this.rooms;
+    }
+}
+class GarageHouse extends House {
+    constructor(rooms, hasGarage) {
+        super(rooms);
+        this.hasGarage = hasGarage;
+    }
+    getHasGarage() {
+        return this.hasGarage;
+    }
+    getHouseDetails() {
+        console.log(`部屋数は${this.getRooms()}です`);
+        if (this.hasGarage) {
+            console.log("車庫があります");
         }
     }
 }
-const myHouse = new House();
-myHouse.activateSecurity(false);
-myHouse.activateSecurity(true, true);
+const myHouse = new GarageHouse(3, true);
+myHouse.getHouseDetails();

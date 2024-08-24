@@ -1,21 +1,32 @@
 class House{
-    activateSecurity(isOn:boolean):void;
-    activateSecurity(isOn:boolean,hasGarage:boolean):void;
+    private rooms:number;
+    constructor(rooms:number){
+        this.rooms=rooms;
+    }
+    protected getRooms():number{
+        return this.rooms;
+    }
+}
 
-    activateSecurity(isOn:boolean,hasGarage?:boolean):void{
-        if(isOn){
-            console.log("セキュリティを作動しました。");
-            if(hasGarage){
-                console.log("ガレージのセキュリティも作動します");
-            }
-        }else{
-                console.log("セキュリティを停止しました");
-                if(hasGarage){
-                    console.log("ガレージのセキュリティも停止します");
-                }
-            }
+class GarageHouse extends House{
+    private hasGarage:boolean;
+
+    constructor(rooms:number,hasGarage:boolean){
+        super(rooms);
+        this.hasGarage=hasGarage;
+    }
+
+    public getHasGarage():boolean{
+        return this.hasGarage;
+    }
+
+    public getHouseDetails():void{
+        console.log(`部屋数は${this.getRooms()}です`);
+        if(this.hasGarage){
+            console.log("車庫があります");
         }
     }
-const myHouse=new House();
-myHouse.activateSecurity(false);
-myHouse.activateSecurity(true,true);
+}
+
+const myHouse=new GarageHouse(3,true);
+myHouse.getHouseDetails();
