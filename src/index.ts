@@ -1,28 +1,21 @@
 class House{
-    public color:string="白";
-    public rooms:number=1;
+    activateSecurity(isOn:boolean):void;
+    activateSecurity(isOn:boolean,hasGarage:boolean):void;
 
-    public activateSecurity(isOn:boolean){
+    activateSecurity(isOn:boolean,hasGarage?:boolean):void{
         if(isOn){
-            console.log("セキュリティを作動しました");
+            console.log("セキュリティを作動しました。");
+            if(hasGarage){
+                console.log("ガレージのセキュリティも作動します");
+            }
         }else{
-            console.log("セキュリティを停止しました");
+                console.log("セキュリティを停止しました");
+                if(hasGarage){
+                    console.log("ガレージのセキュリティも停止します");
+                }
+            }
         }
     }
-}
-
-class GarageHouse extends House{
-    public activateSecurity(isOn: boolean){
-        if(isOn){
-            console.log("セキュリティを作動しました");
-            console.log("ガレージのセキュリティも作動します");
-        }else{
-            console.log("セキュリティを停止しました");
-            console.log("ガレージのセキュリティも停止します");
-        }
-    }
-}
-
-const gh=new GarageHouse();
-gh.activateSecurity(true);
-gh.activateSecurity(false);
+const myHouse=new House();
+myHouse.activateSecurity(false);
+myHouse.activateSecurity(true,true);
