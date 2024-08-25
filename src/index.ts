@@ -1,32 +1,36 @@
-class House{
-    private rooms:number;
-    constructor(rooms:number){
-        this.rooms=rooms;
-    }
-    protected getRooms():number{
-        return this.rooms;
-    }
-}
-
-class GarageHouse extends House{
-    private hasGarage:boolean;
-
-    constructor(rooms:number,hasGarage:boolean){
-        super(rooms);
-        this.hasGarage=hasGarage;
-    }
-
-    public getHasGarage():boolean{
-        return this.hasGarage;
-    }
-
-    public getHouseDetails():void{
-        console.log(`部屋数は${this.getRooms()}です`);
-        if(this.hasGarage){
-            console.log("車庫があります");
+class MyUtility{
+    printNumber<T>(arr:T[]):void{
+        for(const val of arr){
+            console.log(val);
         }
     }
 }
 
-const myHouse=new GarageHouse(3,true);
-myHouse.getHouseDetails();
+const nums=[1,2,3,4,5];
+const names=["Steve","Bill","Mark"];
+const util=new MyUtility();
+util.printNumber<number>(nums);
+util.printNumber<string>(names);
+
+//ジェネリッククラスの使用例
+class MyData<T>{
+    private vals:T[]=[];
+
+    addValue(item:T){
+        this.vals.push(item);
+    }
+
+    getValue(index:number):T{
+        return this.vals[index];
+    }
+}
+
+const dataNum=new MyData<number>();
+dataNum.addValue(5);
+dataNum.addValue(3);
+console.log(dataNum.getValue(1));
+
+const dataStr=new MyData<string>();
+dataStr.addValue("apple");
+dataStr.addValue("orange");
+console.log(dataStr.getValue(1));
