@@ -1,12 +1,21 @@
-abstract class Zukei{
-    abstract Draw():void;
+interface PlaySound{
+    name:string;
+    play():void;
+    stop():void;
 }
 
-class Triangle extends Zukei{
-    Draw(): void {
-        console.log("三角形を描画します");
+class MusicPlayer implements PlaySound{
+    name:string="sample";
+
+    play(): void {
+        console.log(`${this.name}を再生しました。`);
+    }
+
+    stop(): void {
+        console.log(`${this.name}を停止しました`);
     }
 }
 
-const tri =new Triangle();
-tri.Draw();
+const mp=new MusicPlayer();
+mp.play();
+mp.stop();
