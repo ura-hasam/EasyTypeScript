@@ -1,36 +1,53 @@
-class MyUtility{
-    printNumber<T>(arr:T[]):void{
-        for(const val of arr){
-            console.log(val);
+//復習問題9-1
+class House{
+    public color:string="白";
+    public rooms:number=1;
+
+    public activateSecurity(isOn:boolean){
+        if(isOn){
+            console.log("セキュリティを作動しました");
+        }else{
+            console.log("セキュリティを停止しました");
         }
     }
 }
 
-const nums=[1,2,3,4,5];
-const names=["Steve","Bill","Mark"];
-const util=new MyUtility();
-util.printNumber<number>(nums);
-util.printNumber<string>(names);
-
-//ジェネリッククラスの使用例
-class MyData<T>{
-    private vals:T[]=[];
-
-    addValue(item:T){
-        this.vals.push(item);
-    }
-
-    getValue(index:number):T{
-        return this.vals[index];
+class FlyingHouse extends House{
+    Fly():void{//フライメソッドの作成
+        console.log("空を飛びます");
     }
 }
 
-const dataNum=new MyData<number>();
-dataNum.addValue(5);
-dataNum.addValue(3);
-console.log(dataNum.getValue(1));
+const fh= new FlyingHouse;
+// fh.Fly ←自分の解答:()が入っていない
+fh.Fly();//解答
 
-const dataStr=new MyData<string>();
-dataStr.addValue("apple");
-dataStr.addValue("orange");
-console.log(dataStr.getValue(1));
+//復習問題9-2
+// class Calculator{
+//     add(int:number,int2:number):number;
+//     add(int:number,int2:number,int3?:number){
+//         if(int3){
+//             return int+int2+int3
+//         }else{
+//             return int+int2
+//         }
+//     }
+// }
+
+// const sum=new Calculator;
+// sum.add(1,2);　以上のコードではエラーが発生し動かなかった。
+//以下正解の解答
+class Calculator{
+    add(x:number,y:number):number;//x,yを受け取り、
+    add(x:number,y:number,z:number):number;//x,y,zを受け取り、それらを加算してその結果を返すオーバーロード
+    add(x:number,y:number,z?:number):number{//addメソッドの共通定義部分
+        if(z !==undefined){//zがundefinedが未定義である場合
+            return x+y+z;
+        }
+        return x+y;
+    }
+}
+
+const calc=new Calculator();
+console.log(calc.add(2,3,));
+console.log(calc.add(2,3,4));
