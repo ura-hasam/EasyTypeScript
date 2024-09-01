@@ -1,9 +1,14 @@
-const x:number=5;
-const y:number=0;
+try{
+    const x=10;
+    const y=0;
+    if(y===0){
+        throw new Error("ゼロで除算はできません");
+    }
 
-if(y===0){
-    //yが0のときは例外をスローしてプログラムを終了
-    throw new Error("ゼロで割り算はできません");
+    const ans=x/y; //例外が発生するのでここは実行されない
+    console.log(ans);
+}catch{
+    console.log("エラーが発生しました");
+}finally{
+    console.log("プログラムを終了します");
 }
-
-const ans=x/y;
