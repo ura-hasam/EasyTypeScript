@@ -1,51 +1,18 @@
-interface PlaySound{
-    name:string;
-    play():void;
-    stop():void;
+// 復習問題10-1 抽象クラスの作成,10-2
+abstract class Zukei{
+    abstract Draw():void;
 }
 
-class MusicPlayer implements PlaySound{
-    name:string="sample";
-
-    play(): void {
-        console.log(`${this.name}を再生しました。`);
-    }
-
-    stop(): void {
-        console.log(`${this.name}を停止しました`);
+class Eclipse extends Zukei{
+    Draw(): void {
+        console.log("楕円を描画します");
     }
 }
 
-const mp=new MusicPlayer();
-mp.play();
-mp.stop();
+const ep= new Eclipse;
+ep.Draw;
 
-interface PlayVideo extends PlaySound{//インターフェイスの継承
-    videoName:string;
-    playVideo():void;
-    stopVideo():void;
+//インターフェイスの作成
+interface Telephone{
+    call():void;
 }
-class VideoPlayer implements PlayVideo{
-    videoName: string="Sample Video";
-
-    playVideo(): void {
-        console.log(`${this.videoName}を再生しました。`);
-    }
-    stopVideo(): void {
-        console.log(`${this.videoName}を停止しました`);
-    }
-
-    name:string="sample";
-    play(): void {
-        console.log(`${this.name}を再生しました。`);
-    }
-    stop(): void {
-        console.log(`${this.name}を停止しました`);
-    }
-}
-
-const vp=new VideoPlayer();
-vp.playVideo();
-vp.stopVideo();
-vp.play();
-vp.stop();
